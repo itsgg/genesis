@@ -10,9 +10,9 @@ ENV LANG C.UTF-8
 
 RUN useradd -ms $(which bash) asdf
 
-ENV PATH /home/asdf/.asdf/bin:/home/asdf/.asdf/shims:$PATH
-
 USER asdf
+
+ENV PATH /home/asdf/.asdf/bin:/home/asdf/.asdf/shims:$PATH
 
 RUN /bin/bash -c "git clone https://github.com/asdf-vm/asdf.git ~/.asdf && \
                   asdf plugin-add elixir && \
@@ -22,6 +22,6 @@ RUN /bin/bash -c "git clone https://github.com/asdf-vm/asdf.git ~/.asdf && \
                   asdf plugin-add java && \
                   rm -rf  /tmp/*"
 
-WORKDIR /app
+RUN /bin/bash -c /home/asdf/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
-COPY . .
+WORKDIR /home/asdf/
