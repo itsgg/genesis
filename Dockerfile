@@ -5,7 +5,7 @@ RUN apt-get update && \
     apt-get install -y jq wget curl unzip git python build-essential libxml2-dev libxslt-dev \
                     ca-certificates dirmngr gpg-agent gpg \
                     libssl-dev automake autoconf libncurses5-dev \
-                    libssl-dev libreadline-dev libmariadb-dev mariadb-client \
+                    libssl-dev libreadline-dev libmariadb-dev mariadb-client libsqlite3-dev \
                     --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
