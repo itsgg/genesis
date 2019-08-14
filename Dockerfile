@@ -4,8 +4,10 @@ LABEL maintainer="Ganesh Gunasegaran <me@itsgg.com>"
 RUN apt-get update && \
     apt-get install -y jq wget curl unzip git python build-essential libxml2-dev libxslt-dev \
                     ca-certificates dirmngr gpg-agent gpg \
-                    libssl-dev automake autoconf libncurses5-dev \
-                    libssl-dev libreadline-dev libmariadb-dev mariadb-client libsqlite3-dev \
+                    libssl-dev automake autoconf libncurses5-dev libncursesw5-dev \
+                    libreadline-dev libmariadb-dev mariadb-client \
+                    zlib1g-dev libbz2-dev llvm libsqlite3-dev  \
+                    xz-utils tk-dev libffi-dev liblzma-dev python-openssl \
                     --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
