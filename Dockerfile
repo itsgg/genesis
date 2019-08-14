@@ -15,6 +15,7 @@ USER asdf
 ENV PATH /home/asdf/.asdf/bin:/home/asdf/.asdf/shims:$PATH
 
 RUN /bin/bash -c "git clone https://github.com/asdf-vm/asdf.git ~/.asdf && \
+                  asdf plugin-add erlang && \
                   asdf plugin-add elixir && \
                   asdf plugin-add ruby && \
                   asdf plugin-add python && \

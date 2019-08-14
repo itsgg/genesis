@@ -4,6 +4,7 @@ Base docker image to support different language runtimes through https://github.
 
 ## asdf plugins enabled
 
+- erlang
 - elixir
 - ruby
 - python
