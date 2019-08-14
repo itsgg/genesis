@@ -1,0 +1,8 @@
+version: "3.5"
+
+services:
+  genesis:
+    build: .
+    image: genesis
+    container_name: genesis
+    command: ./start.sh

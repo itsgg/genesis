@@ -1,0 +1,17 @@
+README.md
+CHANGELOG.md
+docker-compose.yml
+Dockerfile
+.git/
+log/*
+tmp/*
+target/
+.log
+_build
+deps
+releases
+erl_crash.dump
+node_modules
+priv
+.dockerignore
+npm-debug.log
