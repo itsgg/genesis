@@ -5,4 +5,4 @@ services:
     build: .
     image: genesis
     container_name: genesis
-    command: ./start.sh
+    command:  bash -c "bash start.sh"

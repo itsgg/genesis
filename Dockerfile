@@ -1,6 +1,8 @@
 FROM ubuntu:latest
 LABEL maintainer="Ganesh Gunasegaran <me@itsgg.com>"
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && \
     apt-get install -y jq wget curl unzip git python build-essential libxml2-dev libxslt-dev \
                     ca-certificates dirmngr gpg-agent gpg \
@@ -19,7 +21,7 @@ USER asdf
 
 ENV PATH /home/asdf/.asdf/bin:/home/asdf/.asdf/shims:$PATH
 
-RUN /bin/bash -c "git clone https://github.com/asdf-vm/asdf.git ~/.asdf && \
+RUN /bin/bash -c "git clone https://github.com/asdf-vm/asdf.git /home/asdf/.asdf && \
                   asdf plugin-add erlang && \
                   asdf plugin-add elixir && \
                   asdf plugin-add ruby && \
@@ -31,3 +33,5 @@ RUN /bin/bash -c "git clone https://github.com/asdf-vm/asdf.git ~/.asdf && \
 RUN /bin/bash -c /home/asdf/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
 WORKDIR /home/asdf/
+
+COPY . .
